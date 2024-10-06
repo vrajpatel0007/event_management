@@ -78,7 +78,8 @@ const updateevent = async (req, res) => {
         }
         if (req.files && req.files.image) {
             const relativePath = event.image;
-            const fullPath = path.join(__dirname, relativePath);
+            const fullPath = path.join(__dirname, '..', relativePath);
+            console.log("🚀 ~ updateevent ~ fullPath:", fullPath)
 
             fs.unlink(fullPath, (err) => {
                 if (err) {
